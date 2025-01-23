@@ -32,7 +32,7 @@ public class PostController {
     @PostMapping("/create")
     public String  postCreate(@Valid PostSaveReq dto){
         postService.save(dto);
-        return "redirect:/post/list";
+        return "redirect:/post/list/paging";
     }
     @GetMapping("/list")
     public String  postList(Model model){
@@ -48,6 +48,14 @@ public class PostController {
         model.addAttribute("postList",postListResPage);
         return "/post/post_list";
     }
+
+    @GetMapping("/list/fetchjoin")
+    @ResponseBody
+    public String postListFetchJoin(){
+        postService.listFetchJoin();
+        return "Ok";
+    }
+
     @GetMapping("/detail/{id}")
     public String  postDetail(@PathVariable Long id , Model model){
         PostDetailRes postDetailRes = postService.findById(id);

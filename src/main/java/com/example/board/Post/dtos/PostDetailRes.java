@@ -18,4 +18,6 @@ public class PostDetailRes {
     private String authorEmail;
     private LocalDateTime createdTime;
     private LocalDateTime updatedTime;
+    private String appointment;
+    private LocalDateTime appointmentTime;
 }

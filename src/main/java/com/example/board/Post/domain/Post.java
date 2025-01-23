@@ -1,6 +1,7 @@
 package com.example.board.Post.domain;
 
 import com.example.board.Author.domain.Author;
+import com.example.board.Author.domain.Role;
 import com.example.board.Common.domain.BaseTimeEntity;
 import com.example.board.Post.dtos.PostDetailRes;
 import com.example.board.Post.dtos.PostListRes;
@@ -50,5 +51,8 @@ public class Post extends BaseTimeEntity {
     public void updatePost(PostUpdateReq dto){
         this.title =dto.getTitle();
         this.contents =dto.getContents();
+    }
+    public void updateAppointment(String appointment){
+        this.appointment = appointment;
     }
 }
