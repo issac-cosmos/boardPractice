@@ -19,8 +19,6 @@ public class PostSaveReq {
     private String title;
     private String contents;
     @NotEmpty
-    private String email;
-    @NotEmpty
     private String  appointment;
     private String  appointmentTime;
 
